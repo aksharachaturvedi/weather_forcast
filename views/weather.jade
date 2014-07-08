@@ -1,0 +1,29 @@
+extends layout
+block content
+    div.container
+        br
+        .ShadowBox2
+            div.row
+                - var day = forecast.simpleforecast.forecastday[0];
+                    div.row.panel-title
+                        div.moveCenter
+                            ul
+                               -each day in forecast.simpleforecast.forecastday
+                                li
+                                 div.topleft= incity +', '+ instate + ' | ' + day.date.weekday
+                                    h2= day.low.fahrenheit+'\u2109'
+                                        div.seperator
+                                        p
+                                            =day.fcttext
+                                            div.leftdiv
+                                            div.rightdiv
+                                                |Condition :
+                                                =day.conditions
+                                                br
+                                                |Humadity :
+                                                =day.avehumidity
+                                                br
+                                                |Wind :
+                                                =day.avewind.kph +' kph'
+
+                    br

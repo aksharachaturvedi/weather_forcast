@@ -1,0 +1,28 @@
+extends layout
+block content
+    div.container
+        br
+        .ShadowBox2
+            div.row
+                    div.row.panel-title
+                        div.moveCenter
+                            ul
+                                -each val in allCities
+                                    -if (val != null && val.forecast != null && val.forecast.simpleforecast != null)
+                                      li
+                                        div.topleft=val.cityName + ', ' + val.stateName
+                                            h2= val.forecast.simpleforecast.forecastday[0].low.fahrenheit+'\u2109'
+                                                div.seperator
+                                                p
+                                                    =val.forecast.txt_forecast.forecastday[0].fcttext
+                                                    div.leftdiv
+                                                    div.rightdiv
+                                                        | Condition :
+                                                        =val.forecast.simpleforecast.forecastday[0].conditions
+                                                        br
+                                                        | Humadity :
+                                                        =val.forecast.simpleforecast.forecastday[0].avehumidity
+                                                        br
+                                                        | Wind :
+                                                        =val.forecast.simpleforecast.forecastday[0].avewind.kph +' kph'
+                            br
