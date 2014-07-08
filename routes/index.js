@@ -27,6 +27,10 @@ exports.index = function(req, res, http){
 //load the City and state page with 4 days of weather data
 exports.weather = function (req, res, http) {
 
+    if (req.params.city.length == 0 || req.params.state == 0) {
+        res.render('error', null);
+    }
+
     // data for accessing the Wunderground api
     var options = {
         host: 'api.wunderground.com',
