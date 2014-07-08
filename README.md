@@ -1,11 +1,16 @@
 Weather Forcast
 ===============
 
-NodeJS app to get Weather data
+This App uses Wundergound API and NodeJS to get the weather data.
 
-This App uses Wundergound API to get the weather data for:
+It displays 4 city/state's weather information on home page
 
-Display 4 city/state's weather information on home page
-For a particular city’s 4 days of weather data. URL: http://localhost:3000/weather/CA/San_Jose
+![Alt text](/Screenshots/Home.png "Home Page")
 
-It uses NodeJs, Wunderground API, Jade and Express. For this to work you need to get the API key from wunderground.
+And displays a city’s weather data for  the 4 days
+URL: http://localhost:3000/weather/CA/San_Jose
+
+![Alt text](/Screenshots/City.png "Weather Page")
+
+It uses NodeJs, Wunderground API, Jade and Express. 
+For this to work you need to get the API key from wunderground.
